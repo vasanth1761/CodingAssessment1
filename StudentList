@@ -1,0 +1,44 @@
+package com.stream.demo;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Stream;
+
+public class StudentList {
+
+	
+
+	public static void main(String[] args) {
+
+		Student student=new Student("vasanth",23,"trichy",Arrays.asList("987876","35453"));
+	    Student student1=new Student("raj",21,"theni",Arrays.asList("789656","6637373"));
+	    Student student2=new Student("surya",23,"trichy",Arrays.asList("80979","8795765"));
+	    List<Student>students=Arrays.asList(student,student1,student2);
+	    
+	    Optional<Student> stu = students.stream()
+	    .filter(studen -> studen.getName().equals("surya"))
+	    .findFirst();
+	     System.out.println(stu.isPresent() ? stu.get().getName() : "No student found");
+	    
+        long count=students.stream().count();
+        System.out.println(count);
+        
+        students.stream().filter(studen->studen.getAge()>21).forEach(s->System.out.println(s.getName()));
+        
+        students.stream().sorted(Comparator.comparing(Student::getName))
+        .forEach(s->System.out.println(s.getName()));
+        
+        students.stream().sorted(Comparator.comparing(Student::getAge))
+        .forEach(s->System.out.println(s.getAge()));
+        
+        
+        
+        
+        
+        
+
+	}
+
+}
