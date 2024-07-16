@@ -1,0 +1,51 @@
+package com.stream.demo;
+
+import java.util.List;
+
+public class Student {
+	String name;
+	int age;
+	String address;
+	List<String> mobileNumber;
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public List<String> getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(List<String> mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	public Student(String name, int age, String address, List<String> mobileNumber) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.mobileNumber = mobileNumber;
+	}
+
+}
